@@ -20,7 +20,9 @@ def main(min_el,max_el,size_mas):
 
 #Sort lists of elements using the buuble sort algorithm.
 def bubble_sort(max_size,list_bubble):
-    for m in range(max_size):
+    m=0
+    while m<=max_size-1:
+        m+=1
         for j in range(max_size-1):
             if list_bubble[j]>list_bubble[j+1]:
                 list_bubble[j],list_bubble[j+1]=list_bubble[j+1],list_bubble[j]
