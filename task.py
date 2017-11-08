@@ -1,18 +1,21 @@
 #program, which sort list bubble aldorithm
 from random import randint
-#constant
-MAX_EL=99
-MIN_EL=0
-SIZE_MAS=100
+import time as t
+print('This is program for sort list different algorithm')
 #main function
-def main():
+def main(min_el,max_el,size_mas):
     #create and filling unsorted int list
-    list_int=[randint(MIN_EL,MAX_EL) for i in range(SIZE_MAS)]
+    list_int=[randint(min_el,max_el) for i in range(size_mas)]
     print('int: ',list_int)
 
-    bubble_sort(SIZE_MAS,list_int)
-    print('\nbubble sort list is sorted correctly = true:\n',list_int)  
+    #calculate time of sort and sort list
+    time_buble_int=t.time()
+    bubble_sort(size_mas,list_int)
+    time_buble_int=t.time()-time_buble_int
+    print('\nbubble sort list is sorted correctly = true:\n',list_int)
 
+    #output result execute program 
+    print('int buble sort: time =',time_buble_int,'\nthe list is sorted correctly = true')
     return;
 
 #Sort lists of elements using the buuble sort algorithm.
@@ -23,4 +26,7 @@ def bubble_sort(max_size,list_bubble):
                 list_bubble[j],list_bubble[j+1]=list_bubble[j+1],list_bubble[j]
     return;
 
-main()
+min_el=int(input("Enter the minimal element your masive:"))
+max_el=int(input("Enter the maximal element your masive:"))
+size_mas=int(input("Enter the size your masine:"))
+main(min_el,max_el,size_mas)
